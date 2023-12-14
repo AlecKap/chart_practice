@@ -65,3 +65,7 @@ group :development do
   # gem "spring"
 end
 
+# chartkick gems
+gem "chartkick", "~> 5.0"
+
+gem "groupdate", "~> 6.4"
