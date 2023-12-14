@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Workouts</h1>
+
+<%= line_chart @workouts.group_by_day(:created_at).count %>
+<%= pie_chart @workouts.group(:name).count %>
+<%= bar_chart @workouts.group_by_day(:created_at).count %>
+
+<div id="workouts">
+  <% @workouts.each do |workout| %>
+    <%= render workout %>
+    <p>
+      <%= link_to "Show this workout", workout %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New workout", new_workout_path %>
