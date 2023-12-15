@@ -2,9 +2,9 @@
 
 <h1>Workouts</h1>
 
-<%= line_chart @workouts.group_by_day(:created_at).count %>
+<%= line_chart @workouts.group_by_day(:created_at, range: 1.month.ago..Time.now).count %>
 <%= pie_chart @workouts.group(:name).count %>
-<%= bar_chart @workouts.group_by_day(:created_at).count %>
+<%= bar_chart @workouts.group_by_day(:created_at, range: 1.month.ago..Time.now).count %>
 
 <div id="workouts">
   <% @workouts.each do |workout| %>
